@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Creative Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background: #35424a;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .sidebar h2 {
+            text-align: center;
+            color: #1abc9c;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .sidebar a:hover {
+            background: #1abc9c;
+        }
+        .content {
+            flex: 1;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: #1abc9c;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background: #1abc9c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #16a085;
+        }
+
+        .card {
+            background: #e2e2e2;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Dashboard</h2>
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+    <a href="#">Logout</a>
+</div>
+
+<div class="content">
+    <div class="header">
+        <h1>Welcome to Your Creative Dashboard</h1>
+    </div>
+    <div class="card">
+        <p>This is some placeholder content for your dashboard.</p>
+    </div>
+    <button class="button" id="refreshButton">Refresh Data</button>
+    <div id="data" class="card"></div>
+</div>
+
+<script>
+    document.getElementById("refreshButton").onclick = function() {
+        document.getElementById("data").innerHTML = "Data refreshed at " + new Date().toLocaleTimeString();
+    };
+</script>
+
+</body>
+</html>
